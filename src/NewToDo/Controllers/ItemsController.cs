@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ToDoList.Models;
+using ToDoListWithMigrations.Models;
 
 namespace ToDoList.Controllers
 {
     public class ItemsController : Controller
     {
-        private ToDoListContext db = new ToDoListContext();
+        private ToDoDbContext db = new ToDoDbContext();
         public IActionResult Index()
         {
             return View(db.Items.ToList());
